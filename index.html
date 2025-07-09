@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recommendations - Discover Your Perfect Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <!-- Floating Theme Toggle -->
+    <div class="theme-toggle" id="theme-toggle">
+        <div class="toggle-track">
+            <div class="toggle-thumb">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>SmartRec</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item" data-section="movies">
+                    <i class="fas fa-film"></i>
+                    <span>Movies</span>
+                </div>
+                <div class="nav-item" data-section="books">
+                    <i class="fas fa-book"></i>
+                    <span>Books</span>
+                </div>
+                <div class="nav-item" data-section="products">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Products</span>
+                </div>
+                <div class="nav-item" data-section="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-status">Premium Member</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1 class="page-title">Discover Your Perfect Match</h1>
+                    <p class="page-subtitle">AI-powered recommendations just for you</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search recommendations..." id="search-input">
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Liked Items</h3>
+                            <p class="stat-number">24</p>
+                            <span class="stat-change positive">+12% this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Viewed</h3>
+                            <p class="stat-number">156</p>
+                            <span class="stat-change positive">+8% this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Rated</h3>
+                            <p class="stat-number">89</p>
+                            <span class="stat-change positive">+15% this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Accuracy</h3>
+                            <p class="stat-number">94%</p>
+                            <span class="stat-change positive">+2% this week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendations-grid">
+                    <div class="section-title">
+                        <h2>Recommended for You</h2>
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all">All</button>
+                            <button class="filter-tab" data-filter="movies">Movies</button>
+                            <button class="filter-tab" data-filter="books">Books</button>
+                            <button class="filter-tab" data-filter="products">Products</button>
+                        </div>
+                    </div>
+
+                    <div class="recommendations-container" id="recommendations-container">
+                        <!-- Recommendations will be dynamically loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movies Section -->
+            <section class="content-section" id="movies">
+                <div class="section-header">
+                    <h2>Movie Recommendations</h2>
+                    <div class="genre-filters">
+                        <button class="genre-btn active" data-genre="all">All Genres</button>
+                        <button class="genre-btn" data-genre="action">Action</button>
+                        <button class="genre-btn" data-genre="drama">Drama</button>
+                        <button class="genre-btn" data-genre="comedy">Comedy</button>
+                        <button class="genre-btn" data-genre="sci-fi">Sci-Fi</button>
+                    </div>
+                </div>
+                <div class="movies-grid" id="movies-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Books Section -->
+            <section class="content-section" id="books">
+                <div class="section-header">
+                    <h2>Book Recommendations</h2>
+                    <div class="category-filters">
+                        <button class="category-btn active" data-category="all">All Categories</button>
+                        <button class="category-btn" data-category="fiction">Fiction</button>
+                        <button class="category-btn" data-category="non-fiction">Non-Fiction</button>
+                        <button class="category-btn" data-category="mystery">Mystery</button>
+                        <button class="category-btn" data-category="romance">Romance</button>
+                    </div>
+                </div>
+                <div class="books-grid" id="books-grid">
+                    <!-- Books will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="content-section" id="products">
+                <div class="section-header">
+                    <h2>Product Recommendations</h2>
+                    <div class="product-filters">
+                        <button class="product-btn active" data-category="all">All Products</button>
+                        <button class="product-btn" data-category="electronics">Electronics</button>
+                        <button class="product-btn" data-category="fashion">Fashion</button>
+                        <button class="product-btn" data-category="home">Home & Garden</button>
+                        <button class="product-btn" data-category="sports">Sports</button>
+                    </div>
+                </div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section class="content-section" id="profile">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h2>John Doe</h2>
+                            <p>Premium Member since 2023</p>
+                            <div class="profile-stats">
+                                <span><i class="fas fa-heart"></i> 156 Liked</span>
+                                <span><i class="fas fa-star"></i> 89 Rated</span>
+                                <span><i class="fas fa-eye"></i> 1,234 Viewed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preferences-section">
+                        <h3>Your Preferences</h3>
+                        <div class="preferences-grid">
+                            <div class="preference-card">
+                                <h4>Favorite Genres</h4>
+                                <div class="preference-tags">
+                                    <span class="tag">Action</span>
+                                    <span class="tag">Drama</span>
+                                    <span class="tag">Sci-Fi</span>
+                                    <span class="tag">Mystery</span>
+                                </div>
+                            </div>
+                            <div class="preference-card">
+                                <h4>Reading Preferences</h4>
+                                <div class="preference-tags">
+                                    <span class="tag">Fiction</span>
+                                    <span class="tag">Thriller</span>
+                                    <span class="tag">Biography</span>
+                                </div>
+                            </div>
+                            <div class="preference-card">
+                                <h4>Shopping Categories</h4>
+                                <div class="preference-tags">
+                                    <span class="tag">Electronics</span>
+                                    <span class="tag">Fashion</span>
+                                    <span class="tag">Books</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Recommendation Modal -->
+    <div class="modal" id="recommendation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Item Details</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-dislike">
+                    <i class="fas fa-thumbs-down"></i>
+                    Not Interested
+                </button>
+                <button class="btn btn-primary" id="modal-like">
+                    <i class="fas fa-heart"></i>
+                    I Like This
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+        </div>
+        <p>Finding perfect recommendations...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
